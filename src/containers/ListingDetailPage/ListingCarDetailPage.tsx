@@ -18,9 +18,6 @@ import Input from "shared/Input/Input";
 import NcImage from "shared/NcImage/NcImage";
 import LikeSaveBtns from "./LikeSaveBtns";
 import ModalPhotos from "./ModalPhotos";
-import BackgroundSection from "components/BackgroundSection/BackgroundSection";
-import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
-import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import carUtilities1 from "images/carUtilities/1.png";
 import carUtilities2 from "images/carUtilities/2.png";
 import carUtilities3 from "images/carUtilities/3.png";
@@ -31,6 +28,9 @@ import carUtilities7 from "images/carUtilities/7.png";
 import carUtilities8 from "images/carUtilities/8.png";
 import RentalCarDatesRangeInput from "components/HeroSearchForm/RentalCarDatesRangeInput";
 import { TimeRage } from "components/HeroSearchForm/RentalCarSearchForm";
+import PageAddListing2 from "../PageAddListing1/PageAddListing2";
+import PageAddListing3 from "../PageAddListing1/PageAddListing3";
+import PageAddListing4 from "../PageAddListing1/PageAddListing4";
 
 export interface ListingCarDetailPageProps {
   className?: string;
@@ -124,18 +124,8 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
 
         {/* 2 */}
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
-          BMW 3 Series Sedan
+            Nissan Qashqai
         </h2>
-
-        {/* 3 */}
-        <div className="flex items-center space-x-4">
-          <StartRating />
-          <span>·</span>
-          <span>
-            <i className="las la-map-marker-alt"></i>
-            <span className="ml-1"> Tokyo, Jappan</span>
-          </span>
-        </div>
 
         {/* 4 */}
         <div className="flex items-center">
@@ -173,27 +163,66 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
   //
   const renderSectionTienIch = () => {
     return (
-      <div className="listingSection__wrap">
+      <div className="listingSection__wrap" style={{marginTop: "-1px"}}>
         <div>
-          <h2 className="text-2xl font-semibold">
-            Vehicle parameters & utilities{" "}
-          </h2>
+          <h1 className="text-3xl font-semibold">
+              Nissan Qashqai
+          </h1>
           <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-            Questions are at the heart of making things great.
+            Vehicle parameters & utilities{" "}
           </span>
-        </div>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-        {/* 6 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-6 gap-x-10 text-sm text-neutral-700 dark:text-neutral-300 ">
-          {/* TIEN ICH 1 */}
-          {Amenities_demos.map((item, index) => (
-            <div key={index} className="flex items-center space-x-4 ">
-              <div className="w-10 flex-shrink-0">
-                <img src={item.icon} alt="" />
-              </div>
-              <span>{item.name}</span>
+          <div className="hidden sm:block w-14 border-b border-neutral-100 dark:border-neutral-800 my-4"></div>
+          {/* SHOW MOBILE */}
+          <div className="flex sm:hidden items-center text-sm text-neutral-500 dark:text-neutral-400 space-x-2 mt-4 sm:mt-0">
+            <span>4 seats</span>
+            <span>· </span>
+            <span>Auto gearbox</span>
+            <span>· </span>
+            <span>AC</span>
+            <span>· </span>
+            <span>4 seats</span>
+          </div>
+          {/* SHOW DESK */}
+          <div className="hidden sm:flex items-center space-x-8">
+            {/* --- */}
+            <div className="flex items-center space-x-2">
+              <i className="las la-user-friends text-xl"></i>
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              4 seats
+            </span>
             </div>
-          ))}
+            {/* --- */}
+            <div className="flex items-center space-x-2">
+              <i className="las la-dharmachakra text-xl"></i>
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              Auto gearbox
+            </span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <i className="las la-dharmachakra text-xl"></i>
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              AC
+            </span>
+            </div>
+            {/* --- */}
+            <div className="flex items-center space-x-2">
+              <i className="las la-suitcase text-xl"></i>
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              2 bags
+            </span>
+            </div>
+          </div>
+        </div>
+        {/* 6 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-sm text-neutral-700 dark:text-neutral-300 ">
+          {includes_demo
+              .filter((_, i) => i < 12)
+              .map((item) => (
+                  <div key={item.name} className="flex items-center space-x-3">
+                    <i className="las la-check-circle text-2xl"></i>
+                    <span>{item.name}</span>
+                  </div>
+              ))}
         </div>
       </div>
     );
@@ -475,6 +504,24 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
             </GoogleMapReact>
           </div>
         </div>
+        {/* MAP */}
+        <div className="aspect-w-5 aspect-h-5 sm:aspect-h-3">
+          <div className="rounded-xl overflow-hidden">
+            <GoogleMapReact
+                bootstrapURLKeys={{
+                  key: "AIzaSyDxJaU8bLdx7sSJ8fcRdhYS1pLk8Jdvnx0",
+                }}
+                defaultZoom={15}
+                yesIWantToUseGoogleMapApiInternals
+                defaultCenter={{
+                  lat: 55.9607277,
+                  lng: 36.2172614,
+                }}
+            >
+              <LocationMarker lat={55.9607277} lng={36.2172614} />
+            </GoogleMapReact>
+          </div>
+        </div>
       </div>
     );
   };
@@ -488,30 +535,75 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
 
         {/* CONTENT */}
         <div>
-          <h4 className="text-lg font-semibold">Cancellation policy</h4>
+          <h4 className="text-lg font-semibold">Οδική βοήθεια</h4>
           <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
-            Lock in this fantastic price today, cancel free of charge anytime.
-            Reserve now and pay at pick-up.
+            Η Οδική Βοήθεια είναι δωρεάν και διατίθεται 24/7. Ο συνεργάτης μας για οδική βοήθεια είναι η Interamerican Assistance. Τηλέφωνο: 1158 από την Ελλάδα και 210 9461333 για κλήση από διεθνή κινητά τηλέφωνα.
+Συνιστάται να επικοινωνήσετε απευθείας με το γραφείο μας σε περίπτωση απαιτούμενης οδικής βοήθειας. Κατά τις ώρες εκτός γραφείου, όλες οι απευθείας κλήσεις προς το γραφείο μας προωθούνται στη γραμμή κινητής τηλεφωνίας έκτακτης ανάγκης που έχουμε.
           </span>
         </div>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
 
         {/* CONTENT */}
         <div>
-          <h4 className="text-lg font-semibold">Special Note</h4>
+          <h4 className="text-lg font-semibold">Άδεια οδήγησης</h4>
           <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
-            We asked ourselves, “How can we make the dash not only look better,
-            but also give the driver a better look outside?” The unexpected
-            answer is having no hood above the available 10.25-inch digital
-            instrument cluster...
+            Οι οδηγοί πρέπει να διαθέτουν άδεια σε ισχύ για τουλάχιστον ένα (1) έτος. Γίνονται δεκτές εθνικές άδειες οδήγησης που εκδίδονται σε ΕΕ, Ελλάδα, ΗΠΑ, Ηνωμένο Βασίλειο, Ελβετία, Αυστραλία, Καναδά, Ισραήλ, Ρωσία και Ουκρανία. Απαιτείται διεθνής άδεια οδήγησης για όλες τις άλλες χώρες
+          </span>
+        </div>
+        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
+        <div>
+          <h4 className="text-lg font-semibold">Κυκλοφοριακές Παραβάσεις, Πρόστιμα κυκλοφορίας και Διοικητικές Κυρώσεις</h4>
+          <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
+Οι κλήσεις και οι διοικητικές κυρώσεις που προκύπτουν από οποιαδήποτε παραβίαση της ελληνικής νομοθεσίας περί της κυκλοφορία κατά τη διάρκεια της περιόδου ενοικίασης είναι αποκλειστικά ευθύνη του ενοικιαστή. Εάν κάποια τέτοια διοικητική κύρωση δεν αποκαλυφθεί στην εταιρεία στο τέλος της περιόδου ενοικίασης (συμβόλαιο), η παραβίαση θα χρεωθεί στον ενοικιαστή.
           </span>
         </div>
       </div>
     );
   };
 
+  const renderSection9 = () => {
+    return (
+        <div className="listingSection__wrap">
+          {/* HEADING */}
+          <h2 className="text-2xl font-semibold">Προσωπικές Πληροφορίες</h2>
+            {/* CONTENT */}
+            <div style={{marginTop: "20px", marginBottom: "-15px"}} className="hidden sm:block w-14 border-b border-neutral-100 dark:border-neutral-800 my-2"></div>
+            <div>
+            <PageAddListing2/>
+          </div>
+        </div>
+    );
+  };
+
+  const renderSection10 = () => {
+    return (
+        <div className="listingSection__wrap">
+          {/* HEADING */}
+          <h2 className="text-2xl font-semibold">Παιδικά Καθίσματα</h2>
+            <div style={{marginTop: "20px", marginBottom: "-15px"}} className="hidden sm:block w-14 border-b border-neutral-100 dark:border-neutral-800 my-2"></div>
+            {/* CONTENT */}
+          <div>
+            <PageAddListing3/>
+          </div>
+        </div>
+    );
+  };
+
+  const renderSection11 = () => {
+    return (
+        <div className="listingSection__wrap">
+          {/* CONTENT */}
+          <div>
+            <PageAddListing4/>
+          </div>
+        </div>
+    );
+  };
+
   const renderSidebarPrice = () => {
     return (
+        <div>
+          <div style={{marginTop: "-83px", marginBottom: "25px"}}>{renderSidebarDetail()}</div>
       <div className="listingSection__wrap shadow-xl">
         {/* PRICE */}
         <div className="flex justify-between">
@@ -521,7 +613,6 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
               /day
             </span>
           </span>
-          <StartRating />
         </div>
 
         {/* FORM */}
@@ -558,6 +649,7 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
         {/* SUBMIT */}
         <ButtonPrimary>Reserve</ButtonPrimary>
       </div>
+        </div>
     );
   };
 
@@ -689,25 +781,21 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
       </>
 
       {/* MAIn */}
-      <main className="container mt-11 flex ">
+      <main className="container mt-11 flex mb-20">
         {/* CONTENT */}
         <div className="w-full lg:w-3/5 xl:w-2/3 space-y-8 lg:pr-10 lg:space-y-10">
-          {renderSection1()}
           <div className="block lg:hidden">{renderSidebarDetail()}</div>
           {renderSectionTienIch()}
-          {renderSection2()}
-          {renderSection3()}
-          {renderSectionCheckIndate()}
-          {renderSection5()}
-          {renderSection6()}
-          {renderSection7()}
+          {/*{renderSection7()}*/}
+          {renderSection9()}
+          {renderSection10()}
+          {renderSection11()}
           {renderSection8()}
         </div>
 
         {/* SIDEBAR */}
         <div className="hidden lg:block flex-grow">
-          {renderSidebarDetail()}
-          <div className="mt-10 sticky top-24">{renderSidebarPrice()}</div>
+          <div className="mt-20 sticky top-48">{renderSidebarPrice()}</div>
         </div>
       </main>
 
@@ -723,24 +811,6 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
 
           <ButtonPrimary href="##">Reserve</ButtonPrimary>
         </div>
-      </div>
-
-      {/* OTHER SECTION */}
-      <div className="container py-24 lg:py-32">
-        {/* SECTION 1 */}
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionSliderNewCategories
-            heading="Explore by types of stays"
-            subHeading="Explore houses based on 10 types of stays"
-            categoryCardType="card5"
-            itemPerRow={5}
-            sliderStyle="style2"
-          />
-        </div>
-
-        {/* SECTION */}
-        <SectionSubscribe2 className="pt-24 lg:pt-32" />
       </div>
     </div>
   );
