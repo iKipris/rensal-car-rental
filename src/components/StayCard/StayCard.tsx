@@ -32,7 +32,7 @@ const StayCard: FC<StayCardProps> = ({
     href,
     like,
     saleOff,
-    isAvailable,
+    isAds,
     price,
     reviewStart,
     reviewCount,
@@ -61,7 +61,7 @@ const StayCard: FC<StayCardProps> = ({
             {listingCategory.name} · {bedrooms} beds
           </span>
           <div className="flex items-center space-x-2">
-            {isAvailable && <Badge name="ADS" color="green" />}
+            {isAds && <Badge name="ADS" color="green" />}
             <h2
               className={` font-medium capitalize ${
                 size === "default" ? "text-lg" : "text-base"

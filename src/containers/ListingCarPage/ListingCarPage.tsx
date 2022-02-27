@@ -7,6 +7,12 @@ import { TaxonomyType } from "data/types";
 import React, { FC } from "react";
 import SectionGridFilterCard from "./SectionGridFilterCard";
 import { Helmet } from "react-helmet";
+import SectionHero from "../PageAbout/SectionHero";
+import rightImg from "../../images/about-hero-right.png";
+import SectionFounder from "../PageAbout/SectionFounder";
+import SectionClientSay from "../../components/SectionClientSay/SectionClientSay";
+import SectionStatistic from "../PageAbout/SectionStatistic";
+import SectionVideos from "../PageHome/SectionVideos";
 
 export interface ListingCarPageProps {
   className?: string;
@@ -72,7 +78,7 @@ const ListingCarPage: FC<ListingCarPageProps> = ({ className = "" }) => {
       data-nc-id="ListingCarPage"
     >
       <Helmet>
-        <title>Chisfis || Booking React Template</title>
+        <title>Rensal || Car renting services</title>
       </Helmet>
       <BgGlassmorphism />
 
@@ -81,20 +87,21 @@ const ListingCarPage: FC<ListingCarPageProps> = ({ className = "" }) => {
         <SectionHeroArchivePage
           currentPage="Cars"
           currentTab="Cars"
-          listingType={
-            <>
-              <i className="text-2xl las la-car"></i>
-              <span className="ml-2.5">1512 cars</span>
-            </>
-          }
           className="pt-10 pb-24 lg:pb-32 lg:pt-16 "
         />
 
         {/* SECTION */}
         <SectionGridFilterCard className="pb-24 lg:pb-32" />
+          <SectionHero
+              rightImg={rightImg}
+              heading="👋 About Us."
+              btnText="Contact us"
+              subHeading="We’re impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
+          />
+        <SectionStatistic />
 
         {/* SECTION 1 */}
-        <div className="relative py-16">
+        <div className="relative py-16 lg:pt-16" style={{marginTop: "100px"}}>
           <BackgroundSection />
           <SectionSliderNewCategories
             heading="Explore top destination ✈"
@@ -105,9 +112,17 @@ const ListingCarPage: FC<ListingCarPageProps> = ({ className = "" }) => {
             sliderStyle="style2"
           />
         </div>
-
+        <div className="relative py-16" style={{marginTop: "100px"}}>
+          <SectionSubscribe2 />
+        </div>
         {/* SECTION */}
-        <SectionSubscribe2 className="py-24 lg:py-32" />
+        <div className="relative py-16" style={{marginTop: "100px"}}>
+          <SectionVideos />
+        </div>
+        <div className="relative py-16" style={{marginTop: "100px", marginBottom: "100px"}}>
+          <BackgroundSection />
+          <SectionClientSay />
+        </div>
       </div>
     </div>
   );

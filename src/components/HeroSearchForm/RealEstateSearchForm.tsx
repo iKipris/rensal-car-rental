@@ -32,6 +32,10 @@ const RealEstateSearchForm: FC<RealEstateSearchFormProps> = ({
           defaultValue={locationInputValue}
           onChange={(e) => setLocationInputValue(e)}
         />
+          <LocationInput
+              defaultValue={locationInputValue}
+              onChange={(e) => setLocationInputValue(e)}
+          />
 
         <PropertyTypeSelect />
         <PriceRangeInput />

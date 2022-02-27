@@ -649,14 +649,6 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({
             anchorDirection={windowSize.width > 1400 ? "left" : "right"}
           />
           <div className="w-full border-b border-neutral-200 dark:border-neutral-700"></div>
-          <GuestsInput
-            fieldClassName="p-5"
-            defaultValue={{
-              guestAdults: 1,
-              guestChildren: 2,
-              guestInfants: 0,
-            }}
-          />
         </form>
 
         {/* SUM */}

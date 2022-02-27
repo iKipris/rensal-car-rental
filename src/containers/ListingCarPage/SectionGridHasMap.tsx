@@ -31,10 +31,7 @@ const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
                 Aug 12 - 18
               </span>
             }
-          />
-          <div className="mb-8 lg:mb-11">
-            <TabFilters />
-          </div>
+          />x
           <div className="grid grid-cols-1 gap-8">
             {DEMO_CARS.map((item) => (
               <div

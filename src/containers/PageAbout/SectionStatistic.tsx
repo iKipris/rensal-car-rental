@@ -34,13 +34,7 @@ export interface SectionStatisticProps {
 const SectionStatistic: FC<SectionStatisticProps> = ({ className = "" }) => {
   return (
     <div className={`nc-SectionStatistic relative ${className}`}>
-      <Heading
-        desc=" We’re impartial and independent, and every day we create distinctive,
-          world-class programmes and content"
-      >
-        🚀 Fast Facts
-      </Heading>
-      <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 xl:gap-8">
+      <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 xl:gap-8 mt-20">
         {FOUNDER_DEMO.map((item) => (
           <div
             key={item.id}

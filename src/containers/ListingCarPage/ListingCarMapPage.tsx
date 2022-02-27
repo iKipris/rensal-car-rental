@@ -28,12 +28,6 @@ const ListingCarMapPage: FC<ListingCarMapPageProps> = ({ className = "" }) => {
         <SectionHeroArchivePage
           currentPage="Cars"
           currentTab="Cars"
-          listingType={
-            <>
-              <i className="text-2xl las la-car"></i>
-              <span className="ml-2.5">1512 cars</span>
-            </>
-          }
         />
       </div>
 

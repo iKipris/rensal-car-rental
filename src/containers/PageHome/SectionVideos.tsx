@@ -122,6 +122,7 @@ const SectionVideos: FC<SectionVideosProps> = ({
       <Heading
         desc="Check out our hottest videos. View more and share more new
           perspectives on just about any topic. Everyone’s welcome."
+        className="mt-2"
       >
         🎬 The Videos
       </Heading>

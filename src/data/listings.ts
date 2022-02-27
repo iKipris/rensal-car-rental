@@ -51,7 +51,7 @@ const DEMO_STAY_LISTINGS = __stayListing.map((post, index): StayDataType => {
   return {
     ...post,
     saleOff: !index ? "-20% today" : post.saleOff,
-    isAvailable: !index ? true : post.isAvailable,
+    isAds: !index ? true : post.isAds,
     author: DEMO_AUTHORS.filter((user) => user.id === post.authorId)[0],
     listingCategory: category,
   };
@@ -67,7 +67,7 @@ const DEMO_EXPERIENCES_LISTINGS = __experiencesListing.map(
     return {
       ...post,
       saleOff: !index ? "-20% today" : post.saleOff,
-      isAvailable: !index ? true : post.isAvailable,
+      isAds: !index ? true : post.isAds,
       author: DEMO_AUTHORS.filter((user) => user.id === post.authorId)[0],
       listingCategory: category,
     };
@@ -83,7 +83,7 @@ const DEMO_CAR_LISTINGS = __carsListing.map((post, index): CarDataType => {
   return {
     ...post,
     saleOff: !index ? "-20% today" : post.saleOff,
-    isAvailable: !index ? true : post.isAvailable,
+    isAds: !index ? true : post.isAds,
     author: DEMO_AUTHORS.filter((user) => user.id === post.authorId)[0],
     listingCategory: category,
     featuredImage: carsImgs[index],

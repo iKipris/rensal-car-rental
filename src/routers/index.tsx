@@ -109,7 +109,7 @@ export const pages: Page[] = [
 
 const Routes = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/chisfis">
       <ScrollToTop />
       <SiteHeader />
 

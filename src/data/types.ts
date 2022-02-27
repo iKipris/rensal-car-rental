@@ -79,7 +79,7 @@ export interface StayDataType {
   bedrooms: number;
   bathrooms: number;
   saleOff?: string | null;
-  isAvailable: boolean | null;
+  isAds: boolean | null;
   map: {
     lat: number;
     lng: number;
@@ -105,7 +105,7 @@ export interface ExperiencesDataType {
   listingCategory: TaxonomyType;
   maxGuests: number;
   saleOff?: string | null;
-  isAvailable: boolean | null;
+  isAds: boolean | null;
   map: {
     lat: number;
     lng: number;
@@ -132,7 +132,7 @@ export interface CarDataType {
   seats: number;
   gearshift: string;
   saleOff?: string | null;
-  isAvailable: boolean | null;
+  isAds: boolean | null;
   map: {
     lat: number;
     lng: number;

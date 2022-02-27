@@ -66,10 +66,6 @@ const StaySearchForm: FC<StaySearchFormProps> = ({
           onFocusChange={(focus) => setDateFocused(focus)}
           onChange={(data) => setDateRangeValue(data)}
         />
-        <GuestsInput
-          defaultValue={guestValue}
-          onChange={(data) => setGuestValue(data)}
-        />
         {/* BUTTON SUBMIT OF FORM */}
         <div className="px-4 py-4 lg:py-0">
           <ButtonSubmit />

@@ -43,7 +43,7 @@ const RentalCarSearchForm: FC<RentalCarSearchFormProps> = ({
   >(null);
   const [dropOffLocationType, setDropOffLocationType] = useState<
     "same" | "different"
-  >("same");
+  >("different");
 
   // USER EFFECT
   useEffect(() => {
@@ -64,16 +64,6 @@ const RentalCarSearchForm: FC<RentalCarSearchFormProps> = ({
       <div className=" py-5 [ nc-hero-field-padding ] flex items-center flex-wrap flex-row border-b border-neutral-100 dark:border-neutral-800">
         <div
           className={`py-1.5 px-4 flex items-center rounded-full font-medium text-xs cursor-pointer mr-2 my-1 sm:mr-4 ${
-            dropOffLocationType === "same"
-              ? "bg-black text-white shadow-black/10 shadow-lg"
-              : "border border-neutral-300 dark:border-neutral-700"
-          }`}
-          onClick={(e) => setDropOffLocationType("same")}
-        >
-          Same drop off
-        </div>
-        <div
-          className={`py-1.5 px-4 flex items-center rounded-full font-medium text-xs cursor-pointer mr-2 my-1 sm:mr-4 ${
             dropOffLocationType === "different"
               ? "bg-black text-white shadow-black/10 shadow-lg"
               : "border border-neutral-300 dark:border-neutral-700"
@@ -81,6 +71,16 @@ const RentalCarSearchForm: FC<RentalCarSearchFormProps> = ({
           onClick={(e) => setDropOffLocationType("different")}
         >
           Different drop off
+        </div>
+        <div
+            className={`py-1.5 px-4 flex items-center rounded-full font-medium text-xs cursor-pointer mr-2 my-1 sm:mr-4 ${
+                dropOffLocationType === "same"
+                    ? "bg-black text-white shadow-black/10 shadow-lg"
+                    : "border border-neutral-300 dark:border-neutral-700"
+            }`}
+            onClick={(e) => setDropOffLocationType("same")}
+        >
+          Same drop off
         </div>
       </div>
     );

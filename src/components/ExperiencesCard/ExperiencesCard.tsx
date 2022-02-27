@@ -30,7 +30,7 @@ const ExperiencesCard: FC<ExperiencesCardProps> = ({
     href,
     like,
     saleOff,
-    isAvailable,
+    isAds,
     price,
     reviewStart,
     reviewCount,
@@ -82,7 +82,7 @@ const ExperiencesCard: FC<ExperiencesCardProps> = ({
           </div>
 
           <div className="flex items-center space-x-2">
-            {isAvailable && <Badge name="ADS" color="green" />}
+            {isAds && <Badge name="Rent" color="green" />}
             <h2
               className={` font-medium capitalize ${
                 size === "default" ? "text-base" : "text-base"

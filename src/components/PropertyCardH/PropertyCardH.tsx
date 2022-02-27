@@ -25,7 +25,7 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
     href,
     like,
     saleOff,
-    isAvailable,
+    isAds,
     price,
     reviewStart,
     reviewCount,
@@ -108,7 +108,7 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
             />
           </div>
           <div className="flex items-center space-x-2">
-            {isAvailable && <Badge name="ADS" color="green" />}
+            {isAds && <Badge name="ADS" color="green" />}
             <h2 className="text-lg font-medium capitalize">
               <span className="line-clamp-2">{title}</span>
             </h2>

@@ -1,8 +1,9 @@
 import React, { FC, ReactNode } from "react";
-import imagePng from "images/hero-right2.png";
+import imagePng from "images/hero-right.png";
 import HeroSearchForm, {
   SearchTab,
 } from "components/HeroSearchForm/HeroSearchForm";
+import ButtonPrimary from "../../shared/Button/ButtonPrimary";
 
 export interface SectionHeroArchivePageProps {
   className?: string;
@@ -13,7 +14,6 @@ export interface SectionHeroArchivePageProps {
 
 const SectionHeroArchivePage: FC<SectionHeroArchivePageProps> = ({
   className = "",
-  listingType,
   currentPage,
   currentTab,
 }) => {
@@ -23,23 +23,15 @@ const SectionHeroArchivePage: FC<SectionHeroArchivePageProps> = ({
       data-nc-id="SectionHeroArchivePage"
     >
       <div className="flex flex-col lg:flex-row lg:items-center">
-        <div className="flex-shrink-0 lg:w-1/2 flex flex-col items-start space-y-6 lg:space-y-10 pb-14 lg:pb-64 xl:pb-80 xl:pr-14 lg:mr-10 xl:mr-0">
-          <h2 className="font-medium text-4xl md:text-5xl xl:text-7xl leading-[110%]">
-            Tokyo, Jappan
+        <div className="flex-shrink-0 lg:w-1/2 flex flex-col items-start space-y-8 sm:space-y-10 pb-14 lg:pb-64 xl:pr-14 lg:mr-10 xl:mr-0">
+          <h2 className="font-medium text-4xl md:text-5xl xl:text-7xl !leading-[114%] ">
+            Rensal, car & experiences
           </h2>
-          <div className="flex items-center text-base md:text-lg text-neutral-500 dark:text-neutral-400">
-            <i className="text-2xl las la-map-marked"></i>
-            <span className="ml-2.5">Jappan </span>
-            <span className="mx-5"></span>
-            {listingType ? (
-              listingType
-            ) : (
-              <>
-                <i className="text-2xl las la-home"></i>
-                <span className="ml-2.5">112 properties</span>
-              </>
-            )}
-          </div>
+          <span className="text-base md:text-lg text-neutral-500 dark:text-neutral-400 ml-1">
+            Accompanying us, you have a trip full of experiences. With Rensal,
+            booking quality cars.
+          </span>
+          <ButtonPrimary>Get started </ButtonPrimary>
         </div>
         <div className="flex-grow">
           <img className="w-full" src={imagePng} alt="hero" />
@@ -47,7 +39,7 @@ const SectionHeroArchivePage: FC<SectionHeroArchivePageProps> = ({
       </div>
 
       <div className="flow-root w-full">
-        <div className="z-10 lg:-mt-40 xl:-mt-56 w-full">
+        <div className="z-10 lg:-mt-40 w-full">
           <HeroSearchForm currentPage={currentPage} currentTab={currentTab} />
         </div>
       </div>

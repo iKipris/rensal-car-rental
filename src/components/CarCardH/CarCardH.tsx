@@ -23,7 +23,7 @@ const CarCardH: FC<CarCardHProps> = ({ className = "", data = DEMO_DATA }) => {
     href,
     like,
     saleOff,
-    isAvailable,
+    isAds,
     price,
     reviewStart,
     reviewCount,
@@ -48,7 +48,7 @@ const CarCardH: FC<CarCardHProps> = ({ className = "", data = DEMO_DATA }) => {
       <div className="flex-grow p-3 sm:p-5 flex flex-col">
         <div className="space-y-2">
           <div className="flex items-center space-x-2">
-            {isAvailable && <Badge name="ADS" color="green" />}
+            {isAds && <Badge name="Rent" color="green" />}
             <h2 className="text-xl font-semibold capitalize">
               <span className="line-clamp-1">{title}</span>
             </h2>

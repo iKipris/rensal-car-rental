@@ -5,6 +5,7 @@ import SearchDropdown from "./SearchDropdown";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
 import MenuBar from "shared/MenuBar/MenuBar";
 import SwitchDarkMode from "shared/SwitchDarkMode/SwitchDarkMode";
+import SocialsList from "../SocialsList/SocialsList";
 
 export interface MainNav1Props {
   isTop: boolean;
@@ -24,10 +25,10 @@ const MainNav1: FC<MainNav1Props> = ({ isTop }) => {
         </div>
         <div className="flex-shrink-0 flex items-center justify-end text-neutral-700 dark:text-neutral-100 space-x-1">
           <div className="hidden items-center xl:flex space-x-1">
-            <SwitchDarkMode />
-            <SearchDropdown />
+            <SocialsList className={"mt-2"}/>
             <div className="px-1" />
-            <ButtonPrimary href="/login">Sign up</ButtonPrimary>
+            <ButtonPrimary href="#">Book Now</ButtonPrimary>
+            <SwitchDarkMode />
           </div>
           <div className="flex items-center xl:hidden">
             <SwitchDarkMode />

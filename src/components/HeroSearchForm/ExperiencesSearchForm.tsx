@@ -47,6 +47,11 @@ const ExperiencesSearchForm: FC<ExperiencesSearchFormProps> = ({
           onChange={(e) => setLocationInputValue(e)}
           onInputDone={() => setDateFocused(true)}
         />
+          <LocationInput
+              defaultValue={locationInputValue}
+              onChange={(e) => setLocationInputValue(e)}
+              onInputDone={() => setDateFocused(true)}
+          />
 
         <ExperiencesDateSingleInput
           defaultValue={dateValue}
@@ -57,10 +62,6 @@ const ExperiencesSearchForm: FC<ExperiencesSearchFormProps> = ({
           }}
         />
 
-        <GuestsInput
-          defaultValue={guestValue}
-          onChange={(data) => setGuestValue(data)}
-        />
         {/* BUTTON SUBMIT OF FORM */}
         <div className="px-4 py-4 lg:py-0">
           <ButtonSubmit />

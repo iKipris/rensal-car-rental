@@ -486,14 +486,6 @@ const ListingExperiencesDetailPage: FC<ListingExperiencesDetailPageProps> = ({
             />
           </div>
           <div className="flex-1">
-            <GuestsInput
-              fieldClassName="p-5"
-              defaultValue={{
-                guestAdults: 1,
-                guestChildren: 2,
-                guestInfants: 0,
-              }}
-            />
           </div>
         </form>
 
