@@ -2,7 +2,7 @@ import { ComponentType } from "react";
 
 export interface LocationStates {
   "/"?: {};
-  "/#"?: {};
+  "/our-fleet"?: {};
   "/home-2"?: {};
   "/home-1-header-2"?: {};
   //
@@ -10,7 +10,7 @@ export interface LocationStates {
   //
   "/listing-stay"?: {};
   "/listing-stay-map"?: {};
-  "/listing-stay-detail"?: {};
+  "/terms-conditions"?: {};
   //
   "/listing-experiences"?: {};
   "/listing-experiences-map"?: {};

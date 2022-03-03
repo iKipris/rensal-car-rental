@@ -574,7 +574,43 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({
     return (
       <div className="listingSection__wrap">
         {/* HEADING */}
-        <h2 className="text-2xl font-semibold">Things to know</h2>
+        <h1 className="text-3xl font-bold">Πολιτική Ασφάλισης</h1>
+        <div>
+          <span className="block text-neutral-500 dark:text-neutral-400">
+            Η ενοικίασή σας προστατεύεται με το Premium πακέτο ασφάλισης μας! Σε περίπτωση βλάβης ή κλοπής του αυτοκινήτου, δεν χρειάζεται να πληρώσετε οποιαδήποτε επιπλέον ασφάλιστρα εφόσον η χρήση του αυτοκινήτου γίνεται σύμφωνα με τους όρους και τις προϋποθέσεις της εταιρίας μας. Κατά την παραλαβή του αυτοκινήτου σας, δεν θα σας ζητηθεί να πληρώσετε επιπλέον χρήματα για επιπρόσθετες ασφάλειες.
+          </span>
+        </div>
+        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
+
+        {/* CONTENT */}
+        <div>
+          <h4 className="text-lg font-semibold">CDW - Απαλλαγή από ζημιές ατυχήματος</h4>
+          <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
+            Ο ενοικιαστής είναι ασφαλισμένος για το ενοικιαζόμενο όχημα απο ζημιές οδικού ατυχήματος χωρίς υποχρέωση καταβολής επασφάλιστρου.
+          </span>
+        </div>
+        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
+
+        {/* CONTENT */}
+        <div>
+          <h4 className="text-lg font-semibold">FDW & WUG - Πρόσθετη απαλλαγή από ζημιές ατυχήματος</h4>
+          <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
+            Ο ενοικιαστής είναι ασφαλισμένος για ζημιές που προκλήθηκαν στο κάτω μέρος του οχήματος, στα τζάμια, τα ελαστικά και τον κινητήρα χωρίς υποχρέωση καταβολής επασφάλιστρου. Μπορεί επίσης να αναφέρεται ως Super CDW (SCDW) ή FCDW ή Ασφάλιση τροχών, κάτω πλευράς και τζαμιών (WUG).
+          </span>
+        </div>
+        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
+
+        {/* CONTENT */}
+        <div>
+          <h4 className="text-lg font-semibold">Cancellation policy</h4>
+          <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
+            Refund 50% of the booking value when customers cancel the room
+            within 48 hours after successful booking and 14 days before the
+            check-in time. <br />
+            Then, cancel the room 14 days before the check-in time, get a 50%
+            refund of the total amount paid (minus the service fee).
+          </span>
+        </div>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
 
         {/* CONTENT */}
@@ -681,131 +717,15 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({
     >
       {/* SINGLE HEADER */}
       <>
-        <header className="container 2xl:px-14 rounded-md sm:rounded-xl">
-          <div className="relative grid grid-cols-3 sm:grid-cols-4 gap-1 sm:gap-2">
-            <div
-              className="col-span-2 row-span-3 sm:row-span-2 relative rounded-md sm:rounded-xl overflow-hidden cursor-pointer"
-              onClick={() => handleOpenModal(0)}
-            >
-              <NcImage
-                containerClassName="absolute inset-0"
-                className="object-cover w-full h-full rounded-md sm:rounded-xl"
-                src={PHOTOS[0]}
-                prevImageHorizontal
-              />
-              <div className="absolute inset-0 bg-neutral-900 bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity"></div>
-            </div>
-            {PHOTOS.filter((_, i) => i >= 1 && i < 5).map((item, index) => (
-              <div
-                key={index}
-                className={`relative rounded-md sm:rounded-xl overflow-hidden ${
-                  index >= 3 ? "hidden sm:block" : ""
-                }`}
-              >
-                <NcImage
-                  containerClassName="aspect-w-4 aspect-h-3 sm:aspect-w-6 sm:aspect-h-5"
-                  className="object-cover w-full h-full rounded-md sm:rounded-xl "
-                  src={item || ""}
-                  prevImageHorizontal
-                />
-
-                {/* OVERLAY */}
-                <div
-                  className="absolute inset-0 bg-neutral-900 bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity cursor-pointer"
-                  onClick={() => handleOpenModal(index + 1)}
-                />
-              </div>
-            ))}
-
-            <div
-              className="absolute hidden md:flex md:items-center md:justify-center left-3 bottom-3 px-4 py-2 rounded-xl bg-neutral-100 text-neutral-500 cursor-pointer hover:bg-neutral-200 z-10"
-              onClick={() => handleOpenModal(0)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-                />
-              </svg>
-              <span className="ml-2 text-neutral-800 text-sm font-medium">
-                Show all photos
-              </span>
-            </div>
-          </div>
-        </header>
-        {/* MODAL PHOTOS */}
-        <ModalPhotos
-          imgs={PHOTOS}
-          isOpen={isOpen}
-          onClose={handleCloseModal}
-          initFocus={openFocusIndex}
-        />
       </>
 
       {/* MAIn */}
-      <main className="container mt-11 flex ">
+      <main className="container mt-20 mb-20 flex ">
         {/* CONTENT */}
-        <div className="w-full lg:w-3/5 xl:w-2/3 space-y-8 lg:space-y-10 lg:pr-10">
-          {renderSection1()}
-          {renderSection2()}
-          {renderSection3()}
-          {renderSection4()}
-          {renderSectionCheckIndate()}
-          {renderSection5()}
-          {renderSection6()}
-          {renderSection7()}
+        <div className="w-full space-y-8 lg:space-y-10 lg:pr-10">
           {renderSection8()}
         </div>
-
-        {/* SIDEBAR */}
-        <div className="hidden lg:block flex-grow">
-          <div className="sticky top-24">{renderSidebar()}</div>
-        </div>
       </main>
-
-      {/* STICKY FOOTER MOBILE */}
-      {!isPreviewMode && (
-        <div className="block lg:hidden fixed bottom-0 inset-x-0 py-4 bg-white text-neutral-900 border-t border-neutral-200 z-20">
-          <div className="container flex items-center justify-between">
-            <span className="text-2xl font-semibold">
-              $311
-              <span className="ml-1 text-base font-normal text-neutral-500 dark:text-neutral-400">
-                /night
-              </span>
-            </span>
-
-            <ButtonPrimary href="##">Reserve</ButtonPrimary>
-          </div>
-        </div>
-      )}
-
-      {/* OTHER SECTION */}
-      {!isPreviewMode && (
-        <div className="container py-24 lg:py-32">
-          {/* SECTION 1 */}
-          <div className="relative py-16">
-            <BackgroundSection />
-            <SectionSliderNewCategories
-              heading="Explore by types of stays"
-              subHeading="Explore houses based on 10 types of stays"
-              categoryCardType="card5"
-              itemPerRow={5}
-              sliderStyle="style2"
-            />
-          </div>
-
-          {/* SECTION */}
-          <SectionSubscribe2 className="pt-24 lg:pt-32" />
-        </div>
-      )}
     </div>
   );
 };

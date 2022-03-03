@@ -44,9 +44,6 @@ const SectionGridFeaturePlaces: FC<SectionGridFeaturePlacesProps> = ({
       >
         {DEMO_DATA.map((stay) => renderCard(stay))}
       </div>
-      <div className="flex mt-16 justify-center items-center">
-        <ButtonPrimary loading>Show me more</ButtonPrimary>
-      </div>
     </div>
   );
 };
