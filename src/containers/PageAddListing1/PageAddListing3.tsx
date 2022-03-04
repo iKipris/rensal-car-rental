@@ -1,41 +1,18 @@
 import NcInputNumber from "components/NcInputNumber/NcInputNumber";
 import React, { FC } from "react";
-import Select from "shared/Select/Select";
-import CommonLayout from "./CommonLayout";
-import FormItem from "./FormItem";
 
 export interface PageAddListing3Props {}
 
 const PageAddListing3: FC<PageAddListing3Props> = () => {
   return (
-    <CommonLayout
-      index="03"
-      backtHref="/add-listing-2"
-      nextHref="/add-listing-4"
-    >
       <>
-        <h2 className="text-2xl font-semibold">Size of your location</h2>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
         {/* FORM */}
         <div className="space-y-8">
-          {/* ITEM */}
-          <FormItem label="Acreage (m2)">
-            <Select>
-              <option value="100">100</option>
-              <option value="200">200</option>
-              <option value="300">300</option>
-              <option value="400">400</option>
-              <option value="500">500</option>
-            </Select>
-          </FormItem>
-          <NcInputNumber label="Guests" defaultValue={4} />
-          <NcInputNumber label="Bedroom" defaultValue={4} />
-          <NcInputNumber label="Beds" defaultValue={4} />
-          <NcInputNumber label="Bathroom" defaultValue={2} />
-          <NcInputNumber label="Kitchen" defaultValue={2} />
+          <NcInputNumber max={3} label="Βρεφικό Κάθισμα (0-1 ετών)" desc="Για βρέφη 0-12 μηνών (0-13kg, 0-29lb)" defaultValue={0} />
+          <NcInputNumber max={3} desc="Για παιδιά 1-3 μηνών (9-18kg, 20-40lb)" label="Παιδικό Κάθισμα (1-3 ετών.)" defaultValue={0} />
+          <NcInputNumber max={3} desc="Για παιδιά 4-6 μηνών (18-36kg, 40-79lb)" label="Παιδικό Κάθισμα για μεγάλα παιδιά (4-6 ετών)" defaultValue={0} />
         </div>
       </>
-    </CommonLayout>
   );
 };
 

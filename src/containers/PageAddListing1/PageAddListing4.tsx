@@ -1,98 +1,54 @@
 import React, { FC } from "react";
 import Checkbox from "shared/Checkbox/Checkbox";
-import CommonLayout from "./CommonLayout";
+
+import NcInputNumber from "../../components/NcInputNumber/NcInputNumber";
 
 export interface PageAddListing4Props {}
 
 const PageAddListing4: FC<PageAddListing4Props> = () => {
   return (
-    <CommonLayout
-      index="04"
-      backtHref="/add-listing-3"
-      nextHref="/add-listing-5"
-    >
       <>
-        <div>
-          <h2 className="text-2xl font-semibold">Amenities </h2>
-          <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-            Many customers have searched for accommodation based on amenities
-            criteria
-          </span>
-        </div>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
         {/* FORM */}
         <div className="space-y-8">
           {/* ITEM */}
           <div>
-            <label className="text-lg font-semibold" htmlFor="">
-              General amenities
+            <label className="text-2xl font-semibold" htmlFor="">
+              Επιλογή Ασφάλειας
             </label>
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              <Checkbox label="Wifi" name="Wifi" defaultChecked />
-              <Checkbox label="Internet" name="Internet" />
-              <Checkbox label="TV" name="TV" defaultChecked />
-              <Checkbox label="Air conditioning" name="Air conditioning" />
-              <Checkbox label="Fan" name="Fan" />
-              <Checkbox label="Private entrance" name="Private entrance" />
-              <Checkbox label="Dryer" name="Dryer" defaultChecked />
-              <Checkbox label="Heater" name="Heater" />
-              <Checkbox label="Washing machine" name="Washing machine" />
-              <Checkbox label="Detergent" name="Detergent" defaultChecked />
-              <Checkbox label="Clothes dryer" name="Clothes dryer" />
-              <Checkbox label="Baby cot" name="Baby cot" />
-              <Checkbox label="Desk" name="Desk " defaultChecked />
-              <Checkbox label="Fridge" name="Fridge" />
-              <Checkbox label="Dryer" name="Dryer" defaultChecked />
+            <div className="hidden sm:block w-14 border-b border-neutral-100 dark:border-neutral-800 my-4"></div>
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-5">
+              <Checkbox subLabel="8,00 € / day"  label="Μεικτή Ασφάλεια με Απαλλαγή (CDW)" name="Wifi"  />
+              <Checkbox subLabel="10,00 € / day"  label="Ασφάλεια Μειωμένης Απαλλαγής Ευθύνης (SCDW)" name="Wifi"  />
+              <Checkbox subLabel="11,00 € / day"  label="Ασφάλεια Πλήρους Απαλλαγής Ευθύνης (FDW)" name="Wifi"  />
+              <Checkbox subLabel="13,00 € / day"  label="Κρύσταλλα, Τροχοί και κάτω πλευρά του οχήματος (WUG)" name="Wifi"  />
+              <Checkbox subLabel="15,00 € / day"  label="Ασφάλεια Κλοπής με ποσό απαλλαγής (THW)" name="Wifi"  />
+              <Checkbox subLabel="20,00 € / day"  label="Ασφάλεια Κλοπής με μηδενική απαλλαγή (TP)" name="Wifi"  />
+
             </div>
           </div>
 
           {/* ITEM */}
           <div>
-            <label className="text-lg font-semibold" htmlFor="">
-              Other amenities
+            <label className="text-2xl font-semibold" htmlFor="">
+              Πρόσθετα
             </label>
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              <Checkbox label="Wardrobe" name="Wardrobe" defaultChecked />
-              <Checkbox label="Cloth hook" name="Cloth hook" />
+            <div className="hidden sm:block w-14 border-b border-neutral-100 dark:border-neutral-800 my-4"></div>
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-5">
+              <Checkbox label="WiFi Hotspot" subLabel="15,00 € / day" name="Wardrobe"  />
+              <Checkbox label="GPS Navigator" subLabel="7,00 € / day" name="Cloth hook" />
               <Checkbox
-                label="Extra cushion"
+                  subLabel="10,00 €"
+                label="Πακέτο Ελεύθερων χιλιομέτρων για 1-2 μέρες"
                 name="Extra cushion"
-                defaultChecked
               />
-              <Checkbox label="Gas stove" name="Gas stove" />
-              <Checkbox label="Toilet paper" name="Toilet paper" />
-              <Checkbox
-                label="Free toiletries"
-                name="Free toiletries"
-                defaultChecked
-              />
-              <Checkbox label="Makeup table" name="Makeup table" />
-              <Checkbox label="Hot pot" name="Hot pot" />
-              <Checkbox label="Bathroom heaters" name="Bathroom heaters" />
-              <Checkbox label="Kettle" name="Kettle" defaultChecked />
-              <Checkbox label="Dishwasher" name="Dishwasher" />
-              <Checkbox label="BBQ grill" name="BBQ grill" defaultChecked />
-              <Checkbox label="Toaster" name="Toaster" defaultChecked />
-              <Checkbox label="Towel" name="Towel" />
-              <Checkbox label="Dining table" name="Dining table" />
             </div>
           </div>
-
-          {/* ITEM */}
+          <div className="hidden sm:block w-14 border-b border-neutral-100 dark:border-neutral-800 my-4"></div>
           <div>
-            <label className="text-lg font-semibold" htmlFor="">
-              Safe amenities
-            </label>
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              <Checkbox label="Fire siren" name="Fire siren" defaultChecked />
-              <Checkbox label="Fire extinguisher" name="Fire extinguisher" />
-              <Checkbox label="Anti-theft key" name="Anti-theft key" />
-              <Checkbox label="Safe vault" name="Safe vault" />
-            </div>
+            <NcInputNumber max={5} label="Επιπλέον Οδηγός" desc="7,00 € / day" defaultValue={0} />
           </div>
         </div>
       </>
-    </CommonLayout>
   );
 };
 

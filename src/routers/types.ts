@@ -2,15 +2,15 @@ import { ComponentType } from "react";
 
 export interface LocationStates {
   "/"?: {};
-  "/#"?: {};
+  "/our-fleet"?: {};
   "/home-2"?: {};
   "/home-1-header-2"?: {};
   //
   "/listing-flights"?: {};
   //
   "/listing-stay"?: {};
-  "/listing-stay-map"?: {};
-  "/listing-stay-detail"?: {};
+  "/available-cars"?: {};
+  "/terms-conditions"?: {};
   //
   "/listing-experiences"?: {};
   "/listing-experiences-map"?: {};
@@ -20,9 +20,9 @@ export interface LocationStates {
   "/listing-real-estate-map"?: {};
   "/listing-real-estate-detail"?: {};
   //
-  "/listing-car"?: {};
+  "/home"?: {};
   "/listing-car-map"?: {};
-  "/listing-car-detail"?: {};
+  "/rent-car"?: {};
   //
   "/checkout"?: {};
   "/pay-done"?: {};

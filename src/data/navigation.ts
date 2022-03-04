@@ -188,7 +188,7 @@ const templatesChildrenMenus: NavItemType[] = [
 export const NAVIGATION_DEMO: NavItemType[] = [
   {
     id: ncNanoId(),
-    href: "/listing-car",
+    href: "/home",
     name: "Home",
   },
   {
@@ -198,12 +198,12 @@ export const NAVIGATION_DEMO: NavItemType[] = [
   },
   {
     id: ncNanoId(),
-    href: "#",
+    href: "/our-fleet",
     name: "Our fleet",
   },
   {
     id: ncNanoId(),
-    href: "#",
+    href: "/terms-conditions",
     name: "Terms and conditions",
   },
   {

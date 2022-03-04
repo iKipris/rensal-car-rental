@@ -1,89 +1,45 @@
-import { LocationMarkerIcon } from "@heroicons/react/solid";
-import LocationMarker from "components/AnyReactComponent/LocationMarker";
-import Label from "components/Label/Label";
-import GoogleMapReact from "google-map-react";
 import React, { FC } from "react";
-import ButtonSecondary from "shared/Button/ButtonSecondary";
 import Input from "shared/Input/Input";
-import Select from "shared/Select/Select";
-import CommonLayout from "./CommonLayout";
 import FormItem from "./FormItem";
+import Textarea from "../../shared/Textarea/Textarea";
 
 export interface PageAddListing2Props {}
 
 const PageAddListing2: FC<PageAddListing2Props> = () => {
   return (
-    <CommonLayout
-      index="02"
-      nextHref="/add-listing-3"
-      backtHref="/add-listing-1"
-    >
       <>
-        <h2 className="text-2xl font-semibold">Your place location</h2>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
         {/* FORM */}
         <div className="space-y-8">
-          <ButtonSecondary>
-            <LocationMarkerIcon className="w-5 h-5 text-neutral-500 dark:text-neutral-400" />
-            <span className="ml-3">Use current location</span>
-          </ButtonSecondary>
-          {/* ITEM */}
-          <FormItem label="Country/Region">
-            <Select>
-              <option value="Viet Nam">Viet Nam</option>
-              <option value="Thailand">Thailand</option>
-              <option value="France">France</option>
-              <option value="Singapore">Singapore</option>
-              <option value="Jappan">Jappan</option>
-              <option value="Korea">Korea</option>
-              <option value="...">...</option>
-            </Select>
-          </FormItem>
-          <FormItem label="Street">
-            <Input placeholder="..." />
-          </FormItem>
-          <FormItem label="Room number (optional)">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-5">
+            <FormItem label="'Ονομα">
+              <Input />
+            </FormItem>
+            <FormItem label="Επίθετο">
+              <Input />
+            </FormItem>
+          </div>
+          <FormItem label="Αριθμός Τηλέφώνου">
             <Input />
           </FormItem>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-5">
-            <FormItem label="City">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-5">
+            <FormItem label="Email">
               <Input />
             </FormItem>
-            <FormItem label="State">
-              <Input />
-            </FormItem>
-            <FormItem label="Postal code">
+            <FormItem label="Επιβεβαίωση Email">
               <Input />
             </FormItem>
           </div>
-          <div>
-            <Label>Detailed address</Label>
-            <span className="block mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-              1110 Pennsylvania Avenue NW, Washington, DC 20230
+            <FormItem label="Αριθμός Πτήσης">
+            <span className="block mb-2 text-sm text-neutral-500 dark:text-neutral-400">
+              For airport as pick up location
             </span>
-            <div className="mt-4">
-              <div className="aspect-w-5 aspect-h-5 sm:aspect-h-3">
-                <div className="rounded-xl overflow-hidden">
-                  <GoogleMapReact
-                    bootstrapURLKeys={{
-                      key: "AIzaSyDxJaU8bLdx7sSJ8fcRdhYS1pLk8Jdvnx0",
-                    }}
-                    defaultZoom={15}
-                    yesIWantToUseGoogleMapApiInternals
-                    defaultCenter={{
-                      lat: 55.9607277,
-                      lng: 36.2172614,
-                    }}
-                  >
-                    <LocationMarker lat={55.9607277} lng={36.2172614} />
-                  </GoogleMapReact>
-                </div>
-              </div>
-            </div>
-          </div>
+              <Input />
+            </FormItem>
+          <FormItem label="Πρόσθετες Πληροφορίες">
+            <Textarea placeholder="..." rows={5} />
+          </FormItem>
         </div>
       </>
-    </CommonLayout>
   );
 };
 

@@ -1,12 +1,6 @@
-import React, { FC, useState } from "react";
-import AnyReactComponent from "components/AnyReactComponent/AnyReactComponent";
+import React, { FC } from "react";
 import StayCardH from "components/StayCardH/StayCardH";
-import GoogleMapReact from "google-map-react";
 import { DEMO_STAY_LISTINGS } from "data/listings";
-import ButtonClose from "shared/ButtonClose/ButtonClose";
-import Checkbox from "shared/Checkbox/Checkbox";
-import Pagination from "shared/Pagination/Pagination";
-import TabFilters from "./TabFilters";
 import Heading2 from "components/Heading/Heading2";
 
 const DEMO_STAYS = DEMO_STAY_LISTINGS.filter((_, i) => i < 12);
@@ -14,9 +8,6 @@ const DEMO_STAYS = DEMO_STAY_LISTINGS.filter((_, i) => i < 12);
 export interface SectionGridHasMapProps {}
 
 const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
-  const [currentHoverID, setCurrentHoverID] = useState<string | number>(-1);
-  const [showFullMapFixed, setShowFullMapFixed] = useState(false);
-
   return (
     <div>
       <div className="relative flex min-h-screen">
@@ -29,8 +20,6 @@ const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
             {DEMO_STAYS.map((item) => (
               <div
                 key={item.id}
-                onMouseEnter={() => setCurrentHoverID((_) => item.id)}
-                onMouseLeave={() => setCurrentHoverID((_) => -1)}
               >
                 <StayCardH data={item} />
               </div>

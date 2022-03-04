@@ -6,8 +6,6 @@ import Label from "components/Label/Label";
 import Input from "shared/Input/Input";
 import Textarea from "shared/Textarea/Textarea";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
-import SectionClientSay from "components/SectionClientSay/SectionClientSay";
-import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 
 export interface PageContactProps {
   className?: string;
@@ -39,7 +37,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
       </Helmet>
       <div className="mb-24 lg:mb-32">
         <h2 className="my-16 sm:my-20 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center">
-          Contact
+          Contact Us
         </h2>
         <div className="container max-w-7xl mx-auto">
           <div className="flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 gap-12 ">
@@ -97,11 +95,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 
       {/* OTHER SECTIONS */}
       <div className="container">
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionClientSay />
-        </div>
-        <SectionSubscribe2 className="py-24 lg:py-32" />
+        <SectionSubscribe2 className="py-8 mb-32" />
       </div>
     </div>
   );

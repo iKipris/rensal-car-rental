@@ -1,36 +1,15 @@
 import React, { FC, useState } from "react";
-import { ArrowRightIcon } from "@heroicons/react/outline";
-import LocationMarker from "components/AnyReactComponent/LocationMarker";
-import CommentListing from "components/CommentListing/CommentListing";
-import FiveStartIconForRate from "components/FiveStartIconForRate/FiveStartIconForRate";
 import { DateRage } from "components/HeroSearchForm/StaySearchForm";
-import StartRating from "components/StartRating/StartRating";
-import GoogleMapReact from "google-map-react";
 import useWindowSize from "hooks/useWindowResize";
 import moment from "moment";
-import { DayPickerRangeController, FocusedInputShape } from "react-dates";
-import Avatar from "shared/Avatar/Avatar";
-import Badge from "shared/Badge/Badge";
-import ButtonCircle from "shared/Button/ButtonCircle";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
-import ButtonSecondary from "shared/Button/ButtonSecondary";
-import Input from "shared/Input/Input";
 import NcImage from "shared/NcImage/NcImage";
-import LikeSaveBtns from "./LikeSaveBtns";
 import ModalPhotos from "./ModalPhotos";
-import BackgroundSection from "components/BackgroundSection/BackgroundSection";
-import SectionSliderNewCategories from "components/SectionSliderNewCategories/SectionSliderNewCategories";
-import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
-import carUtilities1 from "images/carUtilities/1.png";
-import carUtilities2 from "images/carUtilities/2.png";
-import carUtilities3 from "images/carUtilities/3.png";
-import carUtilities4 from "images/carUtilities/4.png";
-import carUtilities5 from "images/carUtilities/5.png";
-import carUtilities6 from "images/carUtilities/6.png";
-import carUtilities7 from "images/carUtilities/7.png";
-import carUtilities8 from "images/carUtilities/8.png";
 import RentalCarDatesRangeInput from "components/HeroSearchForm/RentalCarDatesRangeInput";
 import { TimeRage } from "components/HeroSearchForm/RentalCarSearchForm";
+import PageAddListing2 from "../PageAddListing1/PageAddListing2";
+import PageAddListing3 from "../PageAddListing1/PageAddListing3";
+import PageAddListing4 from "../PageAddListing1/PageAddListing4";
 
 export interface ListingCarDetailPageProps {
   className?: string;
@@ -58,20 +37,6 @@ const includes_demo = [
   { name: "Masks are required at the pick-up location" },
 ];
 
-const Amenities_demos = [
-  { name: "59 MPG Combined, 58 City/60 Hwy", icon: carUtilities1 },
-  {
-    name: "Forward Collision-Avoidance Assist with Pedestrian Detection (FCA-Ped)",
-    icon: carUtilities2,
-  },
-  { name: "139-hp gas/electric combined", icon: carUtilities3 },
-  { name: "Proximity Key with push button start", icon: carUtilities4 },
-  { name: "8-inch color touchscreen display audio", icon: carUtilities5 },
-  { name: "Smart Cruise Control with Stop & Go (SCC)", icon: carUtilities6 },
-  { name: "LED Daytime Running Lights (DRL)", icon: carUtilities7 },
-  { name: "Blind-Spot Collision Warning (BCW)", icon: carUtilities8 },
-];
-
 const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
   className = "",
 }) => {
@@ -88,23 +53,8 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
     endTime: "10:00 AM",
   });
 
-  const [focusedInputSectionCheckDate, setFocusedInputSectionCheckDate] =
-    useState<FocusedInputShape>("startDate");
 
   const windowSize = useWindowSize();
-
-  const getDaySize = () => {
-    if (windowSize.width <= 375) {
-      return 34;
-    }
-    if (windowSize.width <= 500) {
-      return undefined;
-    }
-    if (windowSize.width <= 1280) {
-      return 56;
-    }
-    return 48;
-  };
 
   const handleOpenModal = (index: number) => {
     setIsOpen(true);
@@ -113,367 +63,69 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
 
   const handleCloseModal = () => setIsOpen(false);
 
-  const renderSection1 = () => {
-    return (
-      <div className="listingSection__wrap !space-y-6">
-        {/* 1 */}
-        <div className="flex justify-between items-center">
-          <Badge color="pink" name="BMW car" />
-          <LikeSaveBtns />
-        </div>
-
-        {/* 2 */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
-          BMW 3 Series Sedan
-        </h2>
-
-        {/* 3 */}
-        <div className="flex items-center space-x-4">
-          <StartRating />
-          <span>·</span>
-          <span>
-            <i className="las la-map-marker-alt"></i>
-            <span className="ml-1"> Tokyo, Jappan</span>
-          </span>
-        </div>
-
-        {/* 4 */}
-        <div className="flex items-center">
-          <Avatar hasChecked sizeClass="h-10 w-10" radius="rounded-full" />
-          <span className="ml-2.5 text-neutral-500 dark:text-neutral-400">
-            Car owner{" "}
-            <span className="text-neutral-900 dark:text-neutral-200 font-medium">
-              Kevin Francis
-            </span>
-          </span>
-        </div>
-
-        {/* 5 */}
-        <div className="w-full border-b border-neutral-100 dark:border-neutral-700" />
-
-        {/* 6 */}
-        <div className="flex items-center justify-between xl:justify-start space-x-8 xl:space-x-12 text-sm text-neutral-700 dark:text-neutral-300">
-          <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-            <i className="las la-user-friends text-2xl"></i>
-            <span className="">4 seats</span>
-          </div>
-          <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-            <i className="las la-dharmachakra text-2xl"></i>
-            <span className=""> Auto gearbox</span>
-          </div>
-          <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 text-center sm:text-left sm:space-x-3 ">
-            <i className="las la-suitcase text-2xl"></i>
-            <span className=""> 2 bags</span>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   //
   const renderSectionTienIch = () => {
     return (
-      <div className="listingSection__wrap">
+      <div className="listingSection__wrap" style={{marginTop: "-1px"}}>
         <div>
-          <h2 className="text-2xl font-semibold">
+          <h1 className="text-3xl font-semibold">
+              Nissan Qashqai
+          </h1>
+          <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
             Vehicle parameters & utilities{" "}
-          </h2>
-          <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-            Questions are at the heart of making things great.
           </span>
-        </div>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-        {/* 6 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-6 gap-x-10 text-sm text-neutral-700 dark:text-neutral-300 ">
-          {/* TIEN ICH 1 */}
-          {Amenities_demos.map((item, index) => (
-            <div key={index} className="flex items-center space-x-4 ">
-              <div className="w-10 flex-shrink-0">
-                <img src={item.icon} alt="" />
-              </div>
-              <span>{item.name}</span>
+          <div className="hidden sm:block w-14 border-b border-neutral-100 dark:border-neutral-800 my-4"></div>
+          {/* SHOW MOBILE */}
+          <div className="flex sm:hidden items-center text-sm text-neutral-500 dark:text-neutral-400 space-x-2 mt-4 sm:mt-0">
+            <span>4 seats</span>
+            <span>· </span>
+            <span>Auto gearbox</span>
+            <span>· </span>
+            <span>AC</span>
+            <span>· </span>
+            <span>4 seats</span>
+          </div>
+          {/* SHOW DESK */}
+          <div className="hidden sm:flex items-center space-x-8">
+            {/* --- */}
+            <div className="flex items-center space-x-2">
+              <i className="las la-user-friends text-xl"></i>
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              4 seats
+            </span>
             </div>
-          ))}
+            {/* --- */}
+            <div className="flex items-center space-x-2">
+              <i className="las la-dharmachakra text-xl"></i>
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              Auto gearbox
+            </span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <i className="las la-dharmachakra text-xl"></i>
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              AC
+            </span>
+            </div>
+            {/* --- */}
+            <div className="flex items-center space-x-2">
+              <i className="las la-suitcase text-xl"></i>
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              2 bags
+            </span>
+            </div>
+          </div>
         </div>
-      </div>
-    );
-  };
-
-  const renderSection2 = () => {
-    return (
-      <div className="listingSection__wrap">
-        <h2 className="text-2xl font-semibold">Car descriptions</h2>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-        <div className="text-neutral-6000 dark:text-neutral-300">
-          <p>
-            Until the all-new TUCSON hits the dealer showrooms you can check it
-            out in our Showroom Walkaround video. Watch the video and join our
-            product specialist as he gives you an up-close look of our latest
-            SUV
-            <br />
-            <br />
-            Questions are at the heart of making things great. Watch our
-            celebrity-filled TV ad and you’ll see that when we say “everything,”
-            we mean everything.
-          </p>
-        </div>
-      </div>
-    );
-  };
-
-  const renderSection3 = () => {
-    return (
-      <div className="listingSection__wrap">
-        <div>
-          <h2 className="text-2xl font-semibold">Include </h2>
-          <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-            Included in the price
-          </span>
-        </div>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
         {/* 6 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-sm text-neutral-700 dark:text-neutral-300 ">
           {includes_demo
-            .filter((_, i) => i < 12)
-            .map((item) => (
-              <div key={item.name} className="flex items-center space-x-3">
-                <i className="las la-check-circle text-2xl"></i>
-                <span>{item.name}</span>
-              </div>
-            ))}
-        </div>
-      </div>
-    );
-  };
-
-  const renderSectionCheckIndate = () => {
-    return (
-      <div className="listingSection__wrap overflow-hidden">
-        {/* HEADING */}
-        <div>
-          <h2 className="text-2xl font-semibold">Availability</h2>
-          <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-            Prices may increase on weekends or holidays
-          </span>
-        </div>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-        {/* CONTENT */}
-        <div className="listingSection__wrap__DayPickerRangeController flow-root">
-          <div className="-mx-4 sm:mx-auto xl:mx-[-22px]">
-            <DayPickerRangeController
-              startDate={dateRangeValue.startDate}
-              endDate={dateRangeValue.endDate}
-              onDatesChange={(date) => setDateRangeValue(date)}
-              focusedInput={focusedInputSectionCheckDate}
-              onFocusChange={(focusedInput) =>
-                setFocusedInputSectionCheckDate(focusedInput || "startDate")
-              }
-              initialVisibleMonth={null}
-              numberOfMonths={windowSize.width < 1280 ? 1 : 2}
-              daySize={getDaySize()}
-              hideKeyboardShortcutsPanel
-            />
-          </div>
-        </div>
-
-        {/*  */}
-        <div className="flex space-x-8">
-          <div className="w-1/2 space-y-2">
-            <label className="font-medium" htmlFor="startTime">
-              Pick up time:
-            </label>
-            <Input
-              defaultValue={timeRangeValue.startTime}
-              rounded="rounded-xl"
-              id="startTime"
-              type="time"
-            />
-          </div>
-          <div className="w-1/2 space-y-2">
-            <label className="font-medium" htmlFor="endTime">
-              Drop off time:
-            </label>
-            <Input
-              defaultValue={timeRangeValue.endTime}
-              rounded="rounded-xl"
-              id="endTime"
-              type="time"
-              onChange={(e) => console.log(e)}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const renderSection5 = () => {
-    return (
-      <div className="listingSection__wrap">
-        {/* HEADING */}
-        <h2 className="text-2xl font-semibold">Car Owner</h2>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-
-        {/* host */}
-        <div className="flex items-center space-x-4">
-          <Avatar
-            hasChecked
-            hasCheckedClass="w-4 h-4 -top-0.5 right-0.5"
-            sizeClass="h-14 w-14"
-            radius="rounded-full"
-          />
-          <div>
-            <a className="block text-xl font-medium" href="##">
-              Kevin Francis
-            </a>
-            <div className="mt-1.5 flex items-center text-sm text-neutral-500 dark:text-neutral-400">
-              <StartRating />
-              <span className="mx-2">·</span>
-              <span> 12 places</span>
-            </div>
-          </div>
-        </div>
-
-        {/* desc */}
-        <span className="block text-neutral-6000 dark:text-neutral-300">
-          Providing lake views, The Symphony 9 Tam Coc in Ninh Binh provides
-          accommodation, an outdoor swimming pool, a bar, a shared lounge, a
-          garden and barbecue facilities...
-        </span>
-
-        {/* info */}
-        <div className="block text-neutral-500 dark:text-neutral-400 space-y-2.5">
-          <div className="flex items-center space-x-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            <span>Joined in March 2016</span>
-          </div>
-          <div className="flex items-center space-x-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-              />
-            </svg>
-            <span>Response rate - 100%</span>
-          </div>
-          <div className="flex items-center space-x-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-
-            <span>Fast response - within a few hours</span>
-          </div>
-        </div>
-
-        {/* == */}
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-        <div>
-          <ButtonSecondary href="##">See host profile</ButtonSecondary>
-        </div>
-      </div>
-    );
-  };
-
-  const renderSection6 = () => {
-    return (
-      <div className="listingSection__wrap">
-        {/* HEADING */}
-        <h2 className="text-2xl font-semibold">Reviews (23 reviews)</h2>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-
-        {/* Content */}
-        <div className="space-y-5">
-          <FiveStartIconForRate iconClass="w-6 h-6" className="space-x-0.5" />
-          <div className="relative">
-            <Input
-              fontClass=""
-              sizeClass="h-16 px-4 py-3"
-              rounded="rounded-3xl"
-              placeholder="Share your thoughts ..."
-            />
-            <ButtonCircle
-              className="absolute right-2 top-1/2 transform -translate-y-1/2"
-              size=" w-12 h-12 "
-            >
-              <ArrowRightIcon className="w-5 h-5" />
-            </ButtonCircle>
-          </div>
-        </div>
-
-        {/* comment */}
-        <div className="divide-y divide-neutral-100 dark:divide-neutral-800">
-          <CommentListing className="py-8" />
-          <CommentListing className="py-8" />
-          <CommentListing className="py-8" />
-          <CommentListing className="py-8" />
-          <div className="pt-8">
-            <ButtonSecondary>View more 20 reviews</ButtonSecondary>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const renderSection7 = () => {
-    return (
-      <div className="listingSection__wrap">
-        {/* HEADING */}
-        <div>
-          <h2 className="text-2xl font-semibold">Location</h2>
-          <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-            San Diego, CA, United States of America (SAN-San Diego Intl.)
-          </span>
-        </div>
-        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
-
-        {/* MAP */}
-        <div className="aspect-w-5 aspect-h-5 sm:aspect-h-3">
-          <div className="rounded-xl overflow-hidden">
-            <GoogleMapReact
-              bootstrapURLKeys={{
-                key: "AIzaSyDxJaU8bLdx7sSJ8fcRdhYS1pLk8Jdvnx0",
-              }}
-              defaultZoom={15}
-              yesIWantToUseGoogleMapApiInternals
-              defaultCenter={{
-                lat: 55.9607277,
-                lng: 36.2172614,
-              }}
-            >
-              <LocationMarker lat={55.9607277} lng={36.2172614} />
-            </GoogleMapReact>
-          </div>
+              .filter((_, i) => i < 12)
+              .map((item) => (
+                  <div key={item.name} className="flex items-center space-x-3">
+                    <i className="las la-check-circle text-2xl"></i>
+                    <span>{item.name}</span>
+                  </div>
+              ))}
         </div>
       </div>
     );
@@ -488,30 +140,74 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
 
         {/* CONTENT */}
         <div>
-          <h4 className="text-lg font-semibold">Cancellation policy</h4>
+          <h4 className="text-lg font-semibold">Οδική βοήθεια</h4>
           <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
-            Lock in this fantastic price today, cancel free of charge anytime.
-            Reserve now and pay at pick-up.
+            Η Οδική Βοήθεια είναι δωρεάν και διατίθεται 24/7. Ο συνεργάτης μας για οδική βοήθεια είναι η Interamerican Assistance. Τηλέφωνο: 1158 από την Ελλάδα και 210 9461333 για κλήση από διεθνή κινητά τηλέφωνα.
+Συνιστάται να επικοινωνήσετε απευθείας με το γραφείο μας σε περίπτωση απαιτούμενης οδικής βοήθειας. Κατά τις ώρες εκτός γραφείου, όλες οι απευθείας κλήσεις προς το γραφείο μας προωθούνται στη γραμμή κινητής τηλεφωνίας έκτακτης ανάγκης που έχουμε.
           </span>
         </div>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
 
         {/* CONTENT */}
         <div>
-          <h4 className="text-lg font-semibold">Special Note</h4>
+          <h4 className="text-lg font-semibold">Άδεια οδήγησης</h4>
           <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
-            We asked ourselves, “How can we make the dash not only look better,
-            but also give the driver a better look outside?” The unexpected
-            answer is having no hood above the available 10.25-inch digital
-            instrument cluster...
+            Οι οδηγοί πρέπει να διαθέτουν άδεια σε ισχύ για τουλάχιστον ένα (1) έτος. Γίνονται δεκτές εθνικές άδειες οδήγησης που εκδίδονται σε ΕΕ, Ελλάδα, ΗΠΑ, Ηνωμένο Βασίλειο, Ελβετία, Αυστραλία, Καναδά, Ισραήλ, Ρωσία και Ουκρανία. Απαιτείται διεθνής άδεια οδήγησης για όλες τις άλλες χώρες
+          </span>
+        </div>
+        <div className="w-14 border-b border-neutral-200 dark:border-neutral-700" />
+        <div>
+          <h4 className="text-lg font-semibold">Κυκλοφοριακές Παραβάσεις, Πρόστιμα κυκλοφορίας και Διοικητικές Κυρώσεις</h4>
+          <span className="block mt-3 text-neutral-500 dark:text-neutral-400">
+Οι κλήσεις και οι διοικητικές κυρώσεις που προκύπτουν από οποιαδήποτε παραβίαση της ελληνικής νομοθεσίας περί της κυκλοφορία κατά τη διάρκεια της περιόδου ενοικίασης είναι αποκλειστικά ευθύνη του ενοικιαστή. Εάν κάποια τέτοια διοικητική κύρωση δεν αποκαλυφθεί στην εταιρεία στο τέλος της περιόδου ενοικίασης (συμβόλαιο), η παραβίαση θα χρεωθεί στον ενοικιαστή.
           </span>
         </div>
       </div>
     );
   };
 
+  const renderSection9 = () => {
+    return (
+        <div className="listingSection__wrap">
+          {/* HEADING */}
+          <h2 className="text-2xl font-semibold">Προσωπικές Πληροφορίες</h2>
+            {/* CONTENT */}
+            <div style={{marginTop: "20px", marginBottom: "-15px"}} className="hidden sm:block w-14 border-b border-neutral-100 dark:border-neutral-800 my-2"></div>
+            <div>
+            <PageAddListing2/>
+          </div>
+        </div>
+    );
+  };
+
+  const renderSection10 = () => {
+    return (
+        <div className="listingSection__wrap">
+          {/* HEADING */}
+          <h2 className="text-2xl font-semibold">Παιδικά Καθίσματα</h2>
+            <div style={{marginTop: "20px", marginBottom: "-15px"}} className="hidden sm:block w-14 border-b border-neutral-100 dark:border-neutral-800 my-2"></div>
+            {/* CONTENT */}
+          <div>
+            <PageAddListing3/>
+          </div>
+        </div>
+    );
+  };
+
+  const renderSection11 = () => {
+    return (
+        <div className="listingSection__wrap">
+          {/* CONTENT */}
+          <div>
+            <PageAddListing4/>
+          </div>
+        </div>
+    );
+  };
+
   const renderSidebarPrice = () => {
     return (
+        <div>
       <div className="listingSection__wrap shadow-xl">
         {/* PRICE */}
         <div className="flex justify-between">
@@ -521,7 +217,6 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
               /day
             </span>
           </span>
-          <StartRating />
         </div>
 
         {/* FORM */}
@@ -558,43 +253,44 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
         {/* SUBMIT */}
         <ButtonPrimary>Reserve</ButtonPrimary>
       </div>
+        </div>
     );
   };
 
-  const renderSidebarDetail = () => {
-    return (
-      <div className="listingSection__wrap shadow-xl">
-        <span className="text-2xl font-semibold block">
-          Pick up and drop off
-        </span>
-        <div className="mt-8 flex">
-          <div className="flex-shrink-0 flex flex-col items-center py-2">
-            <span className="block w-6 h-6 rounded-full border border-neutral-400"></span>
-            <span className="block flex-grow border-l border-neutral-400 border-dashed my-1"></span>
-            <span className="block w-6 h-6 rounded-full border border-neutral-400"></span>
-          </div>
-          <div className="ml-4 space-y-14 text-sm">
-            <div className="flex flex-col space-y-2">
-              <span className=" text-neutral-500 dark:text-neutral-400">
-                Monday, August 12 · 10:00
-              </span>
-              <span className=" font-semibold">
-                Saint Petersburg City Center
-              </span>
-            </div>
-            <div className="flex flex-col space-y-2">
-              <span className=" text-neutral-500 dark:text-neutral-400">
-                Monday, August 16 · 10:00
-              </span>
-              <span className=" font-semibold">
-                Saint Petersburg City Center
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
+  // const renderSidebarDetail = () => {
+  //   return (
+  //     <div className="listingSection__wrap shadow-xl">
+  //       <span className="text-2xl font-semibold block">
+  //         Pick up and drop off
+  //       </span>
+  //       <div className="mt-8 flex">
+  //         <div className="flex-shrink-0 flex flex-col items-center py-2">
+  //           <span className="block w-6 h-6 rounded-full border border-neutral-400"></span>
+  //           <span className="block flex-grow border-l border-neutral-400 border-dashed my-1"></span>
+  //           <span className="block w-6 h-6 rounded-full border border-neutral-400"></span>
+  //         </div>
+  //         <div className="ml-4 space-y-14 text-sm">
+  //           <div className="flex flex-col space-y-2">
+  //             <span className=" text-neutral-500 dark:text-neutral-400">
+  //               Monday, August 12 · 10:00
+  //             </span>
+  //             <span className=" font-semibold">
+  //               Saint Petersburg City Center
+  //             </span>
+  //           </div>
+  //           <div className="flex flex-col space-y-2">
+  //             <span className=" text-neutral-500 dark:text-neutral-400">
+  //               Monday, August 16 · 10:00
+  //             </span>
+  //             <span className=" font-semibold">
+  //               Saint Petersburg City Center
+  //             </span>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   return (
     <div
@@ -689,25 +385,20 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
       </>
 
       {/* MAIn */}
-      <main className="container mt-11 flex ">
+      <main className="container mt-11 flex mb-20">
         {/* CONTENT */}
         <div className="w-full lg:w-3/5 xl:w-2/3 space-y-8 lg:pr-10 lg:space-y-10">
-          {renderSection1()}
-          <div className="block lg:hidden">{renderSidebarDetail()}</div>
           {renderSectionTienIch()}
-          {renderSection2()}
-          {renderSection3()}
-          {renderSectionCheckIndate()}
-          {renderSection5()}
-          {renderSection6()}
-          {renderSection7()}
+          {/*{renderSection7()}*/}
+          {renderSection9()}
+          {renderSection10()}
+          {renderSection11()}
           {renderSection8()}
         </div>
 
         {/* SIDEBAR */}
         <div className="hidden lg:block flex-grow">
-          {renderSidebarDetail()}
-          <div className="mt-10 sticky top-24">{renderSidebarPrice()}</div>
+          <div className="lg:sticky lg:top-24">{renderSidebarPrice()}</div>
         </div>
       </main>
 
@@ -723,24 +414,6 @@ const ListingCarDetailPage: FC<ListingCarDetailPageProps> = ({
 
           <ButtonPrimary href="##">Reserve</ButtonPrimary>
         </div>
-      </div>
-
-      {/* OTHER SECTION */}
-      <div className="container py-24 lg:py-32">
-        {/* SECTION 1 */}
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionSliderNewCategories
-            heading="Explore by types of stays"
-            subHeading="Explore houses based on 10 types of stays"
-            categoryCardType="card5"
-            itemPerRow={5}
-            sliderStyle="style2"
-          />
-        </div>
-
-        {/* SECTION */}
-        <SectionSubscribe2 className="pt-24 lg:pt-32" />
       </div>
     </div>
   );

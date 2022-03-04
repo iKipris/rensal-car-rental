@@ -6,7 +6,6 @@ import StartRating from "components/StartRating/StartRating";
 import { Link } from "react-router-dom";
 import BtnLikeIcon from "components/BtnLikeIcon/BtnLikeIcon";
 import SaleOffBadge from "components/SaleOffBadge/SaleOffBadge";
-import Badge from "shared/Badge/Badge";
 
 export interface StayCardProps {
   className?: string;
@@ -61,7 +60,6 @@ const StayCard: FC<StayCardProps> = ({
             {listingCategory.name} · {bedrooms} beds
           </span>
           <div className="flex items-center space-x-2">
-            {isAds && <Badge name="ADS" color="green" />}
             <h2
               className={` font-medium capitalize ${
                 size === "default" ? "text-lg" : "text-base"

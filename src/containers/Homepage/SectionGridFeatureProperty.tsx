@@ -1,8 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import { DEMO_STAY_LISTINGS } from "data/listings";
 import { StayDataType } from "data/types";
-import ButtonPrimary from "shared/Button/ButtonPrimary";
-import HeaderFilter from "./HeaderFilter";
+import HeaderFilter from "../Fleet/HeaderFilter";
 import PropertyCardH from "components/PropertyCardH/PropertyCardH";
 
 // OTHER DEMO WILL PASS PROPS
@@ -14,16 +13,12 @@ export interface SectionGridFeaturePropertyProps {
   heading?: ReactNode;
   subHeading?: ReactNode;
   headingIsCenter?: boolean;
-  tabs?: string[];
 }
 
 const SectionGridFeatureProperty: FC<SectionGridFeaturePropertyProps> = ({
-  stayListings = DEMO_DATA,
   gridClass = "",
-  heading = "Featured places to stay",
-  subHeading = "Popular places to stay that Chisfis recommends for you",
-  headingIsCenter,
-  tabs = ["New York", "Tokyo", "Paris", "London"],
+  heading = "Rensal Fleet",
+  subHeading = "",
 }) => {
   const renderCard = (stay: StayDataType, index: number) => {
     return <PropertyCardH key={index} className="h-full" data={stay} />;
@@ -32,19 +27,13 @@ const SectionGridFeatureProperty: FC<SectionGridFeaturePropertyProps> = ({
   return (
     <div className="nc-SectionGridFeatureProperty relative">
       <HeaderFilter
-        tabActive={"New York"}
         subHeading={subHeading}
-        tabs={tabs}
         heading={heading}
-        onClickTab={() => {}}
       />
       <div
         className={`grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-1 xl:grid-cols-2 ${gridClass}`}
       >
         {DEMO_DATA.map(renderCard)}
-      </div>
-      <div className="flex mt-16 justify-center items-center">
-        <ButtonPrimary loading>Show me more</ButtonPrimary>
       </div>
     </div>
   );
