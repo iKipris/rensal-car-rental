@@ -9,12 +9,22 @@ import SectionGridFilterCard from "./SectionGridFilterCard";
 import { Helmet } from "react-helmet";
 import SectionHero from "../PageAbout/SectionHero";
 import rightImg from "../../images/about-hero-right.png";
-import SectionFounder from "../PageAbout/SectionFounder";
 import SectionClientSay from "../../components/SectionClientSay/SectionClientSay";
 import SectionStatistic from "../PageAbout/SectionStatistic";
-import SectionVideos from "../PageHome/SectionVideos";
+import SectionVideos from "../Fleet/SectionVideos";
+import SectionGridFeaturePlaces from "../Fleet/SectionGridFeaturePlaces";
+import SectionGridFeatureProperty from "../Fleet/SectionGridFeatureProperty";
+import SectionHowItWork from "../../components/SectionHowItWork/SectionHowItWork";
+import HIW1img from "../../images/HIW2-1.png";
+import HIW1imgDark from "../../images/HIW2-1-dark.png";
+import HIW2img from "../../images/HIW2-2.png";
+import HIW2imgDark from "../../images/HIW2-2-dark.png";
+import HIW3img from "../../images/HIW2-3.png";
+import HIW3imgDark from "../../images/HIW2-3-dark.png";
+import SectionOurFeatures from "../../components/SectionOurFeatures/SectionOurFeatures";
+import rightImgPng from "../../images/our-features-2.png";
 
-export interface ListingCarPageProps {
+export interface HomepageProps {
   className?: string;
 }
 
@@ -71,11 +81,12 @@ const DEMO_CATS: TaxonomyType[] = [
   },
 ];
 
-const ListingCarPage: FC<ListingCarPageProps> = ({ className = "" }) => {
+
+const Homepage: FC<HomepageProps> = ({ className = "" }) => {
   return (
     <div
-      className={`nc-ListingCarPage relative overflow-hidden ${className}`}
-      data-nc-id="ListingCarPage"
+      className={`nc-Homepage relative overflow-hidden ${className}`}
+      data-nc-id="Homepage"
     >
       <Helmet>
         <title>Rensal || Car renting services</title>
@@ -91,31 +102,43 @@ const ListingCarPage: FC<ListingCarPageProps> = ({ className = "" }) => {
         />
 
         {/* SECTION */}
-        <SectionGridFilterCard className="pb-24 lg:pb-32" />
-          <SectionHero
-              rightImg={rightImg}
-              heading="👋 About Us."
-              btnText="Contact us"
-              subHeading="We’re impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
-          />
-        <SectionStatistic />
-
-        {/* SECTION 1 */}
-        <div className="relative py-16 lg:pt-16" style={{marginTop: "100px"}}>
+        {/* SECTION */}
+        <div className="relative py-16 mb-20">
           <BackgroundSection />
-          <SectionSliderNewCategories
-            heading="Explore top destination ✈"
-            subHeading="Explore thousands of destinations around the world"
-            categoryCardType="card4"
-            itemPerRow={4}
-            categories={DEMO_CATS}
-            sliderStyle="style2"
-          />
-        </div>
-        <div className="relative py-16" style={{marginTop: "100px"}}>
-          <SectionSubscribe2 />
+          <SectionGridFeatureProperty />
         </div>
         {/* SECTION */}
+        <div className="relative py-16" style={{marginTop: "100px"}}>
+          <SectionHowItWork
+              data={[
+                {
+                  id: 1,
+                  img: HIW1img,
+                  imgDark: HIW1imgDark,
+                  title: "Smart search ",
+                  desc: "Name the area or type of home you are looking for the search bar. Our app will find you the perfect match.",
+                },
+                {
+                  id: 2,
+                  img: HIW2img,
+                  imgDark: HIW2imgDark,
+                  title: "Choose Car",
+                  desc: "From the number of options our app will provide, you can select any property that you like to explore.",
+                },
+                {
+                  id: 3,
+                  img: HIW3img,
+                  imgDark: HIW3imgDark,
+                  title: "Book your Car",
+                  desc: "Find a home or space from our search bar. Enter your specific location, property type and price range.",
+                },
+              ]}
+          />
+        </div>
+        <div style={{marginTop: "120px"}}>
+          {/* SECTION2 */}
+          <SectionOurFeatures type="type2" rightImg={rightImgPng} />
+        </div>
         <div className="relative py-16" style={{marginTop: "100px"}}>
           <SectionVideos />
         </div>
@@ -123,9 +146,12 @@ const ListingCarPage: FC<ListingCarPageProps> = ({ className = "" }) => {
           <BackgroundSection />
           <SectionClientSay />
         </div>
+        <div className="relative py-16" style={{marginTop: "80px", marginBottom: "80px"}}>
+          <SectionSubscribe2 />
+        </div>
       </div>
     </div>
   );
 };
 
-export default ListingCarPage;
+export default Homepage;

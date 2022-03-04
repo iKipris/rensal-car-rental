@@ -120,9 +120,9 @@ const DEMO_CATS_2: TaxonomyType[] = [
   },
 ];
 
-function PageHome() {
+function Fleet() {
   return (
-    <div className="nc-PageHome relative overflow-hidden">
+    <div className="nc-Fleet relative overflow-hidden">
       <Helmet>
         <title>Chisfis || Booking React Template</title>
       </Helmet>
@@ -139,4 +139,4 @@ function PageHome() {
   );
 }
 
-export default PageHome;
+export default Fleet;

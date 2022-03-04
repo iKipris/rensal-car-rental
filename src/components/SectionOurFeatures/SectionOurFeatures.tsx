@@ -32,7 +32,7 @@ const SectionOurFeatures: FC<SectionOurFeaturesProps> = ({
         <span className="uppercase text-sm text-gray-400 tracking-widest">
           BENnefits
         </span>
-        <h2 className="font-semibold text-4xl mt-5">Happening cities </h2>
+        <h2 className="font-semibold text-4xl mt-5">About us </h2>
 
         <ul className="space-y-10 mt-16">
           <li className="space-y-4">

@@ -8,6 +8,9 @@ import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 import SectionHero from "./SectionHero";
 import SectionClientSay from "components/SectionClientSay/SectionClientSay";
+import SectionHero2 from "../../components/SectionHero2/SectionHero2";
+import SectionOurFeatures from "../../components/SectionOurFeatures/SectionOurFeatures";
+import rightImgPng from "../../images/our-features-2.png";
 
 export interface PageAboutProps {
   className?: string;
@@ -27,15 +30,14 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
       <BgGlassmorphism />
 
       <div className="container py-16 lg:py-28 space-y-16 lg:space-y-28">
-        <SectionHero
-          rightImg={rightImg}
-          heading="👋 About Us."
-          btnText=""
-          subHeading="We’re impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
-        />
-
+        <div style={{marginTop: "-120px"}}>
+          {/* SECTION2 */}
+          <SectionOurFeatures type="type2" rightImg={rightImgPng} />
+        </div>
+        <div>
         <SectionFounder />
-        <div className="relative py-16">
+        </div>
+        <div className="relative py-16" style={{marginTop: "200px"}}>
           <BackgroundSection />
           <SectionClientSay />
         </div>

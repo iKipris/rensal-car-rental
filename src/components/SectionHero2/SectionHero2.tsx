@@ -32,9 +32,6 @@ const SectionHero2: FC<SectionHero2Props> = ({ className = "", children }) => {
             )}
           </div>
         </div>
-        <div className="mb-10 md:mb-0 md:mt-10 lg:mt-20 w-full">
-          <HeroRealEstateSearchForm />
-        </div>
       </div>
     </div>
   );

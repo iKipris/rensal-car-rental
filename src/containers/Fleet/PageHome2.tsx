@@ -35,6 +35,7 @@ import rightImgPng from "images/our-features-2.png";
 
 import SectionGridFeatureProperty from "./SectionGridFeatureProperty";
 import SectionDowloadApp from "./SectionDowloadApp";
+import BgGlassmorphism from "../../components/BgGlassmorphism/BgGlassmorphism";
 
 const DEMO_CATS_2: TaxonomyType[] = [
   {
@@ -103,7 +104,7 @@ function PageHome2() {
         <title>Chisfis || Real Estate React Template</title>
       </Helmet>
       {/* GLASSMOPHIN */}
-      {/* <BgGlassmorphism /> */}
+       <BgGlassmorphism />
 
       <div className="container relative space-y-24 mb-24 lg:space-y-32 lg:mb-32">
         <SectionHero2 className="lg:mt-2" />

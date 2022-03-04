@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Checkbox from "shared/Checkbox/Checkbox";
-import CommonLayout from "./CommonLayout";
+
 import NcInputNumber from "../../components/NcInputNumber/NcInputNumber";
 
 export interface PageAddListing4Props {}

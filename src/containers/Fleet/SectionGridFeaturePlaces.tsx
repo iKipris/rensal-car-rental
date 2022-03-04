@@ -1,7 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import { DEMO_STAY_LISTINGS } from "data/listings";
 import { StayDataType } from "data/types";
-import ButtonPrimary from "shared/Button/ButtonPrimary";
 import HeaderFilter from "./HeaderFilter";
 import StayCard from "components/StayCard/StayCard";
 
@@ -19,25 +18,19 @@ export interface SectionGridFeaturePlacesProps {
 }
 
 const SectionGridFeaturePlaces: FC<SectionGridFeaturePlacesProps> = ({
-  stayListings = DEMO_DATA,
   gridClass = "",
-  heading = "Featured places to stay",
+  heading = "Our fleet",
   subHeading = "Popular places to stay that Chisfis recommends for you",
-  headingIsCenter,
-  tabs = ["New York", "Tokyo", "Paris", "London"],
 }) => {
   const renderCard = (stay: StayDataType) => {
     return <StayCard key={stay.id} data={stay} />;
   };
 
   return (
-    <div className="nc-SectionGridFeaturePlaces relative">
+    <div className="nc-SectionGridFeaturePlaces relative pb-12">
       <HeaderFilter
-        tabActive={"New York"}
         subHeading={subHeading}
-        tabs={tabs}
         heading={heading}
-        onClickTab={() => {}}
       />
       <div
         className={`grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ${gridClass}`}

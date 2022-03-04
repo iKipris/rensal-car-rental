@@ -3,19 +3,13 @@ import twFocusClass from "utils/twFocusClass";
 
 export interface NextPrevProps {
   className?: string;
-  currentPage?: number;
-  totalPage?: number;
   btnClassName?: string;
-  onClickNext?: () => void;
-  onClickPrev?: () => void;
   onlyNext?: boolean;
   onlyPrev?: boolean;
 }
 
 const NextPrev: FC<NextPrevProps> = ({
   className = "",
-  onClickNext = () => {},
-  onClickPrev = () => {},
   btnClassName = "w-10 h-10",
   onlyNext = false,
   onlyPrev = false,
@@ -31,7 +25,7 @@ const NextPrev: FC<NextPrevProps> = ({
           className={`${btnClassName} ${
             !onlyPrev ? "mr-[6px]" : ""
           } bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-6000 dark:hover:border-neutral-500 rounded-full flex items-center justify-center hover:border-neutral-300 ${twFocusClass()}`}
-          onClick={onClickPrev}
+          onClick={(e) => e.preventDefault()}
           title="Prev"
           data-glide-dir="<"
         >
@@ -41,7 +35,7 @@ const NextPrev: FC<NextPrevProps> = ({
       {!onlyPrev && (
         <button
           className={`${btnClassName} bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-6000 dark:hover:border-neutral-500 rounded-full flex items-center justify-center hover:border-neutral-300 ${twFocusClass()}`}
-          onClick={onClickNext}
+          onClick={(e) => e.preventDefault()}
           title="Next"
           data-glide-dir=">"
         >

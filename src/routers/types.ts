@@ -9,7 +9,7 @@ export interface LocationStates {
   "/listing-flights"?: {};
   //
   "/listing-stay"?: {};
-  "/listing-stay-map"?: {};
+  "/available-cars"?: {};
   "/terms-conditions"?: {};
   //
   "/listing-experiences"?: {};
@@ -20,9 +20,9 @@ export interface LocationStates {
   "/listing-real-estate-map"?: {};
   "/listing-real-estate-detail"?: {};
   //
-  "/listing-car"?: {};
+  "/home"?: {};
   "/listing-car-map"?: {};
-  "/listing-car-detail"?: {};
+  "/rent-car"?: {};
   //
   "/checkout"?: {};
   "/pay-done"?: {};
