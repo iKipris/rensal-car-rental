@@ -13,8 +13,6 @@ export interface SectionGridFeaturePlacesProps {
   gridClass?: string;
   heading?: ReactNode;
   subHeading?: ReactNode;
-  headingIsCenter?: boolean;
-  tabs?: string[];
 }
 
 const SectionGridFeaturePlaces: FC<SectionGridFeaturePlacesProps> = ({

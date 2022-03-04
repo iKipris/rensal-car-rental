@@ -57,37 +57,4 @@ const DEMO_STAY_LISTINGS = __stayListing.map((post, index): StayDataType => {
   };
 });
 
-const DEMO_EXPERIENCES_LISTINGS = __experiencesListing.map(
-  (post, index): ExperiencesDataType => {
-    //  ##########  GET CATEGORY BY CAT ID ######## //
-    const category = DEMO_EXPERIENCES_CATEGORIES.filter(
-      (taxonomy) => taxonomy.id === post.listingCategoryId
-    )[0];
-
-    return {
-      ...post,
-      saleOff: !index ? "-20% today" : post.saleOff,
-      isAds: !index ? true : post.isAds,
-      author: DEMO_AUTHORS.filter((user) => user.id === post.authorId)[0],
-      listingCategory: category,
-    };
-  }
-);
-
-const DEMO_CAR_LISTINGS = __carsListing.map((post, index): CarDataType => {
-  //  ##########  GET CATEGORY BY CAT ID ######## //
-  const category = DEMO_EXPERIENCES_CATEGORIES.filter(
-    (taxonomy) => taxonomy.id === post.listingCategoryId
-  )[0];
-
-  return {
-    ...post,
-    saleOff: !index ? "-20% today" : post.saleOff,
-    isAds: !index ? true : post.isAds,
-    author: DEMO_AUTHORS.filter((user) => user.id === post.authorId)[0],
-    listingCategory: category,
-    featuredImage: carsImgs[index],
-  };
-});
-
-export { DEMO_STAY_LISTINGS, DEMO_EXPERIENCES_LISTINGS, DEMO_CAR_LISTINGS };
+export { DEMO_STAY_LISTINGS };

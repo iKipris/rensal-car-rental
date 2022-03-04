@@ -1,8 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import Heading from "shared/Heading/Heading";
-import Nav from "shared/Nav/Nav";
-import NavItem from "shared/NavItem/NavItem";
-import ButtonSecondary from "shared/Button/ButtonSecondary";
 import { ReactNode } from "react";
 
 export interface HeaderFilterProps {

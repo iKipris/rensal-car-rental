@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import { DEMO_STAY_LISTINGS } from "data/listings";
 import { StayDataType } from "data/types";
-import HeaderFilter from "./HeaderFilter";
+import HeaderFilter from "../Fleet/HeaderFilter";
 import PropertyCardH from "components/PropertyCardH/PropertyCardH";
 
 // OTHER DEMO WILL PASS PROPS

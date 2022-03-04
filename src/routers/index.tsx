@@ -13,13 +13,11 @@ import CheckOutPage from "containers/CheckOutPage/CheckOutPage";
 import PayPage from "containers/PayPage/PayPage";
 import PageContact from "containers/PageContact/PageContact";
 import PageAbout from "containers/PageAbout/PageAbout";
-import PageHome2 from "containers/Fleet/PageHome2";
 import SiteHeader from "containers/SiteHeader";
 
 export const pages: Page[] = [
   { path: "/", exact: true, component: Homepage },
   { path: "/our-fleet", exact: true, component: Fleet },
-  { path: "/home-2", component: PageHome2 },
   { path: "/available-cars", component: ListingStayMapPage },
   { path: "/terms-conditions", component: ListingStayDetailPage },
   { path: "/home", component: Homepage },

@@ -6,8 +6,6 @@ import Label from "components/Label/Label";
 import Input from "shared/Input/Input";
 import Textarea from "shared/Textarea/Textarea";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
-import SectionClientSay from "components/SectionClientSay/SectionClientSay";
-import BackgroundSection from "components/BackgroundSection/BackgroundSection";
 
 export interface PageContactProps {
   className?: string;

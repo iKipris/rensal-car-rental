@@ -1,4 +1,3 @@
-import rightImg from "images/about-hero-right.png";
 import React, { FC } from "react";
 import SectionFounder from "./SectionFounder";
 import SectionStatistic from "./SectionStatistic";
@@ -6,9 +5,7 @@ import { Helmet } from "react-helmet";
 import SectionSubscribe2 from "components/SectionSubscribe2/SectionSubscribe2";
 import BgGlassmorphism from "components/BgGlassmorphism/BgGlassmorphism";
 import BackgroundSection from "components/BackgroundSection/BackgroundSection";
-import SectionHero from "./SectionHero";
 import SectionClientSay from "components/SectionClientSay/SectionClientSay";
-import SectionHero2 from "../../components/SectionHero2/SectionHero2";
 import SectionOurFeatures from "../../components/SectionOurFeatures/SectionOurFeatures";
 import rightImgPng from "../../images/our-features-2.png";
 
