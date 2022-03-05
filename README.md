@@ -7,15 +7,11 @@ In the project directory, please run follow step by step bellow:
 
 #### `npm install` or `yarn`
 
-### 2 - Install tailwindcss:
-
-#### `npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9` or `yarn add -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9`
-
-### 3 - Then Available Scripts
+### 2 - Then Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
