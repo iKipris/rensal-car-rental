@@ -21,7 +21,6 @@ const StayCardH: FC<StayCardHProps> = ({
 }) => {
   const {
     galleryImgs,
-    listingCategory,
     address,
     title,
     href,
@@ -103,7 +102,7 @@ const StayCardH: FC<StayCardHProps> = ({
         <div className="space-y-2">
           <div className="text-sm text-neutral-500 dark:text-neutral-400">
             <span>
-              {listingCategory.name} in {address}
+               This is a subtitle in {address}
             </span>
           </div>
           <div className="flex items-center space-x-2">

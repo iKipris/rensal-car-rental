@@ -24,7 +24,6 @@ const StayCard: FC<StayCardProps> = ({
 }) => {
   const {
     galleryImgs,
-    listingCategory,
     address,
     title,
     bedrooms,
@@ -57,7 +56,7 @@ const StayCard: FC<StayCardProps> = ({
       <div className={size === "default" ? "p-4 space-y-4" : "p-3 space-y-2"}>
         <div className="space-y-2">
           <span className="text-sm text-neutral-500 dark:text-neutral-400">
-            {listingCategory.name} · {bedrooms} beds
+            · {bedrooms} beds
           </span>
           <div className="flex items-center space-x-2">
             <h2
